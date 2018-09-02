@@ -20,14 +20,13 @@
       padding-bottom: 95px
     +r($mobile)
       padding-bottom: 80px
-  &__image-container
   &__number-block
     position: absolute
     top: 210px
     display: flex
     justify-content: center
     align-items: center
-    background-color: rgb(94, 66, 176)
+    background-color: $primary-color
     width: 168px
     height: 155px
     +r($tablet)
@@ -43,13 +42,13 @@
     position: relative
     +font-open-bold
     font-size: 24px
-    color: rgb(245, 246, 247)
+    color: #f5f6f7
     line-height: 1.4
     +r($mobile)
       font-size: 14px
       margin-bottom: 5px
     &:after
-      content: ''
+      content: ""
       position: absolute
       left: 0
       bottom: -7px
@@ -83,9 +82,7 @@
       margin-top: 22px
       letter-spacing: 1px
 
-
 .be, .work
-  .action__image-container
   .action__info-container
     padding-left: 130px
     padding-right: 15px
@@ -101,7 +98,6 @@
       left: 30px
     +r($mobile)
       left: 20px
-
 
 .find
   .action__image-container
