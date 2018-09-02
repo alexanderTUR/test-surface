@@ -1,0 +1,235 @@
+//Fonts and text
+=font-open-reg
+  font-family: 'OpenSans', sans-serif
+  font-weight: normal
+  font-style: normal
+
+=font-open-bold
+  font-family: 'OpenSans', sans-serif
+  font-weight: bold
+  font-style: normal
+
+//Media queries
+//width
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+//height
+=rh($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=rhmin($height)
+  @media only screen and (min-height: $height + "px")
+    @content
+
+//width min-max
+=mmw($width-min, $width-max)
+  @media only screen and (min-width: $width-min + "px") and (max-width: $width-max + "px")
+    @content
+
+//height min-max
+=mmh($height-min, $height-max)
+  @media only screen and (min-height: $height-min + "px") and (max-height: $height-max + "px")
+    @content
+
+//retina
+=retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    @content
+
+//iPhoneX landscape
+=iphonexland
+  @media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : landscape)
+    @content
+
+//iPhone landscape
+=iphoneland
+  @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)
+    @content
+
+//iPad Pro portrait
+=ipadproport
+  @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px)  and (orientation : portrait)
+    @content
+
+//middle
+=md
+  +r(1023)
+    @content
+
+//small
+=sm
+  +r(767)
+    @content
+
+//xsmall
+=xs
+  +r(599)
+    @content
+
+//Layout
+%pseudo
+  position: relative
+  &:before,&:after
+    content: ' '
+    position: absolute
+    top: 0
+    left: 0
+
+=pseudo
+  @extend %pseudo
+
+=coverdiv
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+//Reset links
+=link-reset
+  display: inline-block
+  position: relative
+  color: inherit
+  text-decoration: none
+
+//vertical-align at center
+=vcenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+//clearfix
+=clr
+  &:after
+    content: " "
+    display: table
+    clear: both
+
+=unselectable
+  user-select: none
+
+=placeholder
+  &::placeholder
+    @content
+
+//font-family
+=font($alias, $name)
+  @font-face
+    font-family: $alias
+    src: url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff")
+    font-weight: normal
+    font-style: normal
+    //to use: +font(black, cytiapro-black-webfont)
+
+//font size
+=fs($sizeValue: 16)
+  font-size: $sizeValue + px
+  font-size: $sizeValue / 10 + rem
+
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=hidetext
+  font: 0/0 a
+  text-shadow: none
+  color: transparent
+
+=prevent-text
+  word-break: break-all
+  word-break: break-word
+  hyphens: auto
+
+=smooth-font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+//Images
+=img
+  display: block
+  width: 100%
+  height: auto
+
+=image($image)
+  background-image: img-url($image)
+
+=cover
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
+
+=bg-size($width: 100%, $height: 100%)
+  background-size: $width $height
+
+//Transforms
+//rotate
+=rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
+  transform: rotate($deg + deg)
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand')
+
+//transition
+=trans($what: all, $dur: 0.2s, $easing: ease)
+  transition: $what $dur $easing
+
+//scale
+=scale($var)
+  transform: scale($var)
+
+//performance
+=gpu
+  transform: translate3d(0,0,0)
+
+//scroll fix
+=smooth-scroll
+  -webkit-overflow-scrolling: touch
+
+//Colors
+//simple gradient
+=g($color1, $color2)
+  background-image: linear-gradient($color1, $color2)
+
+=gh($color1, $color2)
+  background-image: linear-gradient(left, $color1, $color2)
+
+=placeholder-color($color)
+  &::placeholder
+    color: $color
+
+//filters
+=gray
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale")
+  // Firefox 10+
+  filter: gray
+  // IE6-9
+  -webkit-filter: grayscale(100%)
+  // Chrome 19+ & Safari 6+
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)"
+
+=gray-half
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0.5'/></filter></svg>#grayscale")
+  // Firefox 10+
+  filter: gray alpha(opacity = 50)
+  // IE6-9
+  -webkit-filter: grayscale(50%)
+  // Chrome 19+ & Safari 6+
+
+=gray-zero
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale")
+  -webkit-filter: grayscale(0%)
+
+//blur
+=blur($var)
+  filter: blur($var)
+
+=better-blur($radius)
+  filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a' x='0' y='0' width='1' height='1' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='#{$radius}' result='b'/%3E%3CfeMorphology operator='dilate' radius='#{$radius}'/%3E %3CfeMerge%3E%3CfeMergeNode/%3E%3CfeMergeNode in='b'/%3E%3C/feMerge%3E%3C/filter%3E %3C/svg%3E#a")

@@ -1,0 +1,126 @@
+.action
+  display: flex
+  flex-wrap: wrap
+  &__image-container, &__info-container
+    width: 50%
+    +r($tablet)
+      width: 100%
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__info-container
+    max-width: 780px
+    min-height: 730px
+    position: relative
+    padding-bottom: 15px
+    +r($tablet)
+      max-width: 100%
+      min-height: initial
+      padding-bottom: 95px
+    +r($mobile)
+      padding-bottom: 80px
+  &__image-container
+  &__number-block
+    position: absolute
+    top: 210px
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: rgb(94, 66, 176)
+    width: 168px
+    height: 155px
+    +r($tablet)
+      top: -84px
+      width: 116px
+      height: 116px
+    +r($mobile)
+      width: 70px
+      height: 70px
+      top: -58px
+  &__number
+    margin-bottom: 10px
+    position: relative
+    +font-open-bold
+    font-size: 24px
+    color: rgb(245, 246, 247)
+    line-height: 1.4
+    +r($mobile)
+      font-size: 14px
+      margin-bottom: 5px
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -7px
+      border-radius: 2px
+      background-color: rgba(255, 255, 255, 0.3)
+      width: 100%
+      height: 5px
+  &__title
+    margin-top: 260px
+    font-size: 80px
+    +font-open-bold
+    color: rgba(193, 193, 193, 0.4)
+    text-transform: uppercase
+    line-height: 0.75
+    +r($tablet)
+      margin-top: 90px
+    +r($mobile)
+      font-size: 28px
+      margin-top: 33px
+  &__text
+    margin-top: 112px
+    font-size: 24px
+    color: $black-color
+    line-height: 1.16
+    letter-spacing: 1px
+    +r($tablet)
+      margin-top: 33px
+      letter-spacing: 1.6px
+    +r($mobile)
+      font-size: 16px
+      margin-top: 22px
+      letter-spacing: 1px
+
+
+.be, .work
+  .action__image-container
+  .action__info-container
+    padding-left: 130px
+    padding-right: 15px
+    +r($tablet)
+      padding-left: 30px
+      padding-right: 30px
+    +r($mobile)
+      padding-left: 20px
+      padding-right: 20px
+  .action__number-block
+    left: -84px
+    +r($tablet)
+      left: 30px
+    +r($mobile)
+      left: 20px
+
+
+.find
+  .action__image-container
+    order: 2
+    +r($tablet)
+      order: initial
+  .action__info-container
+    order: 1
+    margin-left: auto
+    padding-left: 15px
+    padding-right: 130px
+    +r($tablet)
+      order: initial
+      padding-left: 30px
+      padding-right: 30px
+  .action__number-block
+    right: -84px
+    +r($tablet)
+      right: initial
+      left: 30px
+    +r($mobile)
+      left: 20px

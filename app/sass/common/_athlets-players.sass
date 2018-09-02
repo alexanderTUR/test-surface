@@ -1,0 +1,212 @@
+.athlets
+  position: relative
+  &__title-container
+    max-width: 1560px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 115px
+    +r($tablet)
+      padding-left: 30px
+      padding-right: 30px
+      padding-top: 85px
+    +r($mobile)
+      padding-left: 20px
+      padding-right: 20px
+      padding-top: 23px
+  &__title
+    width: 50%
+    margin-left: auto
+    padding-left: 47px
+    +font-open-bold
+    font-size: 80px
+    color: rgb(231, 231, 231)
+    line-height: 0.75
+    text-transform: uppercase
+    +r($tablet)
+      width: 63%
+      padding-left: 0
+    +r($mobile)
+      font-size: 50px
+      width: 100%
+  &__image-container
+    position: absolute
+    top: 30px
+    right: 50%
+    width: 570px
+    +r($tablet)
+      width: 440px
+      top: 90px
+      right: initial
+      left: -170px
+    +r($mobile)
+      width: 175px
+      position: relative
+      left: initial
+      top: initial
+      margin: 20px auto 0
+  &__image
+    +img
+  &__profit-list
+    margin-top: 55px
+    +r($tablet)
+      margin-top: 28px
+    +r($mobile)
+      margin-top: 0
+
+.players
+  position: relative
+  &__title-container
+    max-width: 1560px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 115px
+    +r($tablet)
+      padding-left: 30px
+      padding-right: 30px
+      padding-top: 85px
+    +r($mobile)
+      padding-left: 20px
+      padding-right: 20px
+      padding-top: 23px
+  &__title
+    width: 50%
+    margin-right: auto
+    padding-right: 47px
+    +font-open-bold
+    font-size: 80px
+    color: rgb(231, 231, 231)
+    line-height: 0.75
+    text-transform: uppercase
+    +r($tablet)
+      width: 63%
+      padding-left: 0
+    +r($mobile)
+      font-size: 50px
+      width: 100%
+  &__image-container
+    position: absolute
+    top: 25px
+    left: 42%
+    width: 990px
+    +r($tablet)
+      width: 700px
+      top: 35px
+    +r($mobile)
+      width: 302px
+      position: relative
+      left: initial
+      top: initial
+      margin: 20px auto 0
+  &__image
+    +img
+  &__profit-list
+    margin-top: 55px
+    +r($tablet)
+      margin-top: 28px
+    +r($mobile)
+      margin-top: 10px
+
+.profit
+  &_right-align
+    margin-left: auto
+    padding-left: 47px
+    +r($tablet)
+      padding-left: 0
+  &__item
+    padding-top: 55px
+    padding-bottom: 55px
+    +r($tablet)
+      padding-top: 35px
+      padding-bottom: 35px
+    +r($mobile)
+      padding-top: 50px
+      padding-bottom: 50px
+    &_dirty-bg
+      background-color: #f6f4fa
+    &_violet-bg
+      background-color: $primary-color
+    &_gray-bg
+      background-color: #f5f6f7
+    &_dark-bg
+      background-color: #0a0e34
+    &_pixel-perfect-mod
+      padding-bottom: 90px
+      +r($tablet)
+        padding-bottom: 35px
+  &__container
+    max-width: 1560px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+    +r($tablet)
+      padding-left: 30px
+      padding-right: 30px
+    +r($mobile)
+      padding-left: 20px
+      padding-right: 20px
+  &__title-container
+    display: flex
+    width: 50%
+    +r($tablet)
+      width: 63%
+    +r($mobile)
+      width: 100%
+  &__title-number
+    position: relative
+    +font-open-bold
+    font-size: 18px
+    color: $black-color
+    line-height: 0.9
+    +r($mobile)
+      font-size: 14px
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      border-radius: 2px
+      background-color: $primary-color
+      height: 5px
+    &_white-line
+      &:after
+        background-color: #efefef
+    &_violet-color
+      color: $primary-color
+  &__title
+    z-index: 10
+    +font-open-bold
+    font-size: 36px
+    color: rgb(193, 193, 193)
+    text-transform: uppercase
+    line-height: 0.8
+    margin-left: 10px
+    letter-spacing: 2px
+    +r($tablet)
+      font-size: 32px
+    +r($mobile)
+      font-size: 23px
+      letter-spacing: 1px
+  &__text
+    position: relative
+    width: 50%
+    font-size: 20px
+    color: $black-color
+    line-height: 1.4
+    margin-top: 25px
+    letter-spacing: 1px
+    z-index: 10
+    +r($tablet)
+      width: 63%
+      font-size: 16px
+      line-height: 1.8
+    +r($mobile)
+      width: 100%
+      font-size: 15px
+      line-height: 1.2
+    &_white
+      color: $white-color
+    &_pixel-perfect-mod
+      margin-top: 35px

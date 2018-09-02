@@ -1,0 +1,50 @@
+.button-download
+  display: flex
+  align-items: center
+  border-radius: 38px
+  background-color: $primary-color
+  width: 100%
+  max-width: 311px
+  min-height: 77px
+  text-decoration: none
+  transition: background .2s ease
+  +r($mobile)
+    max-width: 280px
+    min-height: 35px
+    align-items: center
+  &_icon-container
+    position: relative
+  &_appstore
+    padding-left: 30px
+    .button-download__icon-container
+      margin-bottom: 10px
+      +r($mobile)
+        margin-bottom: 0
+    +r($mobile)
+      padding-left: 80px
+  &_googleplay
+    padding-left: 50px
+    +r($mobile)
+      padding-left: 80px
+  &:hover, &:active
+    +rmin($tablet)
+      background-color: $white-color
+      .button-download__text, .svg
+        color: $primary-color
+  &__text-container
+    display: flex
+    flex-direction: column
+    margin-left: 25px
+    +r($mobile)
+      margin-left: 7px
+  &__text
+    font-size: 14px
+    color: $white-color
+    text-transform: uppercase
+    transition: color .2s ease
+    +r($mobile)
+      font-size: 8px
+    &_store
+      +font-open-bold
+      +r($mobile)
+        margin-top: 3px
